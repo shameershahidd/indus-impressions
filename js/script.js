@@ -133,30 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
   }
 
-  /* CUSTOM CURSOR — desktop only */
-  if (window.matchMedia('(hover: hover)').matches) {
-    const dot  = document.createElement('div'); dot.className  = 'cursor-dot';
-    const ring = document.createElement('div'); ring.className = 'cursor-ring';
-    document.body.append(dot, ring);
-
-    let mx = 0, my = 0, rx = 0, ry = 0;
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX; my = e.clientY;
-      dot.style.left = mx + 'px'; dot.style.top = my + 'px';
-    });
-    (function lerp() {
-      rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
-      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-      requestAnimationFrame(lerp);
-    })();
-
-    const hoverTargets = 'a, button, .feat-card, .team-card, .prod-card, .exh-item, .artisan-card, .filter-btn';
-    document.querySelectorAll(hoverTargets).forEach(el => {
-      el.addEventListener('mouseenter', () => ring.classList.add('hovering'));
-      el.addEventListener('mouseleave', () => ring.classList.remove('hovering'));
-    });
-  }
-
   /* CLICK SOUND */
   let audioCtx = null;
   function playClick() {
