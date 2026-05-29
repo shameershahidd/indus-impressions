@@ -133,26 +133,5 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
   }
 
-  /* CLICK SOUND */
-  let audioCtx = null;
-  function playClick() {
-    try {
-      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      audioCtx.resume().then(() => {
-        const t    = audioCtx.currentTime;
-        const osc  = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        osc.connect(gain); gain.connect(audioCtx.destination);
-        osc.type = 'triangle';
-        osc.frequency.setValueAtTime(1100, t);
-        osc.frequency.exponentialRampToValueAtTime(700, t + 0.04);
-        gain.gain.setValueAtTime(0.06, t);
-        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.05);
-        osc.start(t);
-        osc.stop(t + 0.05);
-      });
-    } catch(e) {}
-  }
-  document.querySelectorAll('a, button').forEach(el => el.addEventListener('click', playClick));
 
 });
