@@ -116,11 +116,21 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   if (prodModal) {
-    document.querySelectorAll('.prod-overlay-btn').forEach(btn => {
-      btn.addEventListener('click', e => {
-        e.stopPropagation();
-        const card = btn.closest('.prod-card');
-        if (pmArt)  pmArt.innerHTML  = card.querySelector('.prod-image').innerHTML.replace(/<div class="prod-overlay">.*?<\/div>/s, '');
+    document.querySelectorAll('.prod-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const imgEl = card.querySelector('.prod-image');
+        if (pmArt) {
+          pmArt.innerHTML = '';
+          const img = imgEl.querySelector('img');
+          const svg = imgEl.querySelector('svg');
+          if (img) {
+            const clone = img.cloneNode(true);
+            clone.style.cssText = 'width:100%;height:100%;object-fit:cover;';
+            pmArt.appendChild(clone);
+          } else if (svg) {
+            pmArt.appendChild(svg.cloneNode(true));
+          }
+        }
         if (pmCat)  pmCat.textContent  = card.querySelector('.prod-cat')?.textContent  || '';
         if (pmName) pmName.textContent = card.querySelector('.prod-name')?.textContent || '';
         if (pmDesc) pmDesc.textContent = card.querySelector('.prod-desc')?.textContent || '';
