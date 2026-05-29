@@ -101,6 +101,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* PRODUCT MODAL */
+  const prodModal = document.getElementById('prod-modal');
+  const pmClose   = document.getElementById('pm-close');
+  const pmArt     = document.getElementById('pm-art');
+  const pmCat     = document.getElementById('pm-cat');
+  const pmName    = document.getElementById('pm-name');
+  const pmDesc    = document.getElementById('pm-desc');
+
+  const closePm = () => {
+    if (!prodModal) return;
+    prodModal.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  if (prodModal) {
+    document.querySelectorAll('.prod-overlay-btn').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        const card = btn.closest('.prod-card');
+        if (pmArt)  pmArt.innerHTML  = card.querySelector('.prod-image').innerHTML.replace(/<div class="prod-overlay">.*?<\/div>/s, '');
+        if (pmCat)  pmCat.textContent  = card.querySelector('.prod-cat')?.textContent  || '';
+        if (pmName) pmName.textContent = card.querySelector('.prod-name')?.textContent || '';
+        if (pmDesc) pmDesc.textContent = card.querySelector('.prod-desc')?.textContent || '';
+        prodModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    if (pmClose) pmClose.addEventListener('click', closePm);
+    prodModal.addEventListener('click', e => { if (e.target === prodModal) closePm(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closePm(); });
+  }
+
   /* LIGHTBOX */
   const lightbox  = document.getElementById('lightbox');
   const lbTitle   = document.getElementById('lb-title');
