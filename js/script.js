@@ -162,16 +162,18 @@ document.addEventListener('DOMContentLoaded', () => {
   function playClick() {
     try {
       if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      const osc  = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-      osc.connect(gain); gain.connect(audioCtx.destination);
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(680, audioCtx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(260, audioCtx.currentTime + 0.07);
-      gain.gain.setValueAtTime(0.10, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.10);
-      osc.start(audioCtx.currentTime);
-      osc.stop(audioCtx.currentTime + 0.10);
+      audioCtx.resume().then(() => {
+        const osc  = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain); gain.connect(audioCtx.destination);
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(680, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(260, audioCtx.currentTime + 0.07);
+        gain.gain.setValueAtTime(0.10, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.10);
+        osc.start(audioCtx.currentTime);
+        osc.stop(audioCtx.currentTime + 0.10);
+      });
     } catch(e) {}
   }
   document.querySelectorAll('a, button').forEach(el => el.addEventListener('click', playClick));
