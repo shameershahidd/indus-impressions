@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Indus Impressions — Fashion with Purpose</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <div class="curtain" id="curtain"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-main">Indus Impressions</span>
+      <span class="logo-sub">Islamabad · Pakistan</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="exhibition.html">Exhibition</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wc-wash"></div>
+
+    <!-- Hero cloth photograph -->
+    <div class="hero-photo-wrap">
+      <img src="images/hero-cloth.png" alt="Indus Impressions — woven cloth by the river"/>
+    </div>
+
+    <div class="hero-dolphin-wrap" aria-hidden="true">
+      <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="wc-hero">
+            <feTurbulence type="fractalNoise" baseFrequency="0.035 0.05" numOctaves="4" seed="3" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="14" xChannelSelector="R" yChannelSelector="G" result="d"/>
+            <feGaussianBlur in="d" stdDeviation="2.5"/>
+          </filter>
+        </defs>
+        <g filter="url(#wc-hero)">
+          <ellipse cx="420" cy="218" rx="285" ry="82" fill="#7B2B3A" opacity="0.55"/>
+          <ellipse cx="405" cy="228" rx="265" ry="62" fill="#604038" opacity="0.32"/>
+          <path d="M138,204 C108,198 68,196 28,200 C68,207 108,214 138,222 Z" fill="#7B2B3A" opacity="0.55"/>
+          <ellipse cx="185" cy="212" rx="58" ry="52" fill="#7B2B3A" opacity="0.48"/>
+          <path d="M370,132 C386,104 414,93 436,108 C448,120 432,136 412,142 C395,146 368,142 370,132 Z" fill="#604038" opacity="0.42"/>
+          <path d="M272,252 C255,278 244,302 266,310 C288,313 308,286 298,260 Z" fill="#7B2B3A" opacity="0.38"/>
+          <ellipse cx="675" cy="215" rx="52" ry="36" fill="#7B2B3A" opacity="0.48"/>
+          <path d="M698,178 C728,146 764,130 768,150 C766,168 745,182 724,188 Z" fill="#7B2B3A" opacity="0.52"/>
+          <path d="M698,250 C728,280 764,296 768,276 C766,258 745,244 724,240 Z" fill="#7B2B3A" opacity="0.52"/>
+          <circle cx="218" cy="204" r="5" fill="#201E1B" opacity="0.55"/>
+          <circle cx="219" cy="203" r="2" fill="#F5F0E8" opacity="0.6"/>
+          <ellipse cx="340" cy="196" rx="155" ry="44" fill="#7B2B3A" opacity="0.13"/>
+          <ellipse cx="510" cy="232" rx="175" ry="46" fill="#604038" opacity="0.10"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <span class="eyebrow">Islamabad · Pakistan · Est. 2024</span>
+      <h1 class="hero-title">Worn with<br><em>Purpose</em></h1>
+      <p class="hero-sub">Handcrafted bags and sarees inspired by the endangered Indus River dolphin — fashion that honours our vanishing wildlife and speaks for those who cannot.</p>
+      <div class="hero-cta">
+        <a href="products.html" class="btn-primary">Explore Collection</a>
+        <a href="about.html" class="btn-outline">Our Story</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Brand Intro -->
+  <section class="section">
+    <div class="sec-inner">
+      <div class="two-col">
+        <div>
+          <span class="section-label reveal">The Brand</span>
+          <h2 class="section-heading reveal d1">Where Craft Meets <em>Conscience</em></h2>
+          <div class="divider reveal d2"></div>
+          <p class="body-text reveal d2">Indus Impressions is a contemporary fashion and textile collection based in Islamabad, Pakistan — blending sustainability, creativity, and cultural storytelling. Our project is built on the theme of the Indus Valley dolphin and soil erosion, highlighting the environmental challenges affecting Pakistan's natural heritage and ecosystem.</p>
+          <p class="body-text reveal d3" style="margin-top:1.4rem;">Four upcycled leather bags with Swati geometric weaving panels. Two handloom sarees honouring traditional artisan craft. Each piece reflects the deep connection between nature, environmental preservation, and Pakistani identity — promoting responsible design through fashion.</p>
+          <a href="about.html" class="btn-outline reveal d4" style="margin-top:2.4rem;display:inline-block;">Meet the Team</a>
+        </div>
+        <div class="reveal d2">
+          <div class="wc-block">
+            <img src="images/hero-cloth.png" alt="Handwoven collection by Indus Impressions" style="width:100%;height:100%;object-fit:cover;position:relative;z-index:1;"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section-sm features-bg">
+    <div class="sec-inner">
+      <span class="section-label reveal">What We Offer</span>
+      <h2 class="section-heading reveal d1">Three Ways to <em>Carry the Story</em></h2>
+      <div class="features-grid reveal d2" style="margin-top:3.5rem;">
+        <div class="feat-card">
+          <span class="feat-num">01</span>
+          <h3 class="feat-title">4 Bags</h3>
+          <p class="feat-desc">Four hand-stitched leather bags with Sindhi weaving panels — each piece advocates for the Indus River dolphin and the artisans who have crafted along its banks for generations.</p>
+          <a href="products.html" class="feat-link">View Bags</a>
+        </div>
+        <div class="feat-card">
+          <span class="feat-num">02</span>
+          <h3 class="feat-title">2 Sarees</h3>
+          <p class="feat-desc">Two handwoven sarees in merlot and earthy brown — dyed, painted, and embroidered by Sindhi weavers whose craft embodies centuries of river heritage and cultural memory.</p>
+          <a href="products.html" class="feat-link">View Sarees</a>
+        </div>
+        <div class="feat-card">
+          <span class="feat-num">03</span>
+          <h3 class="feat-title">Exhibition</h3>
+          <p class="feat-desc">An online gallery advocating for the Indus River dolphin — where each piece is a statement, a story, and a call to protect what little of the Bhulan's world remains.</p>
+          <a href="exhibition.html" class="feat-link">Enter Gallery</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="section mission-bg">
+    <div class="wc-wash"></div>
+    <div class="sec-inner mission-inner">
+      <span class="section-label reveal" style="color:#7B2B3A;">The Bhulan</span>
+      <h2 class="section-heading reveal d1" style="color:#F5F0E8;">Fewer Than <em>2,000</em><br>Remain</h2>
+      <div class="divider divider-center reveal d2" style="background:#7B2B3A;"></div>
+      <p class="body-text reveal d2" style="color:rgba(245,240,232,0.62);max-width:600px;margin:0 auto;">The Indus River dolphin — known locally as the Bhulan — is one of the world's most endangered freshwater dolphins. Climate change, river pollution, and shrinking habitats have pushed this gentle creature toward extinction. Indus Impressions exists to make sure they are not forgotten.</p>
+      <div class="stats-row reveal d3">
+        <div>
+          <span class="stat-num">~1,800</span>
+          <span class="stat-label">Remaining in the wild</span>
+        </div>
+        <div>
+          <span class="stat-num">EN</span>
+          <span class="stat-label">IUCN Conservation status</span>
+        </div>
+        <div>
+          <span class="stat-num">Sindh</span>
+          <span class="stat-label">Their last stretch of river</span>
+        </div>
+      </div>
+      <a href="about.html" class="btn-primary reveal d4" style="margin-top:3rem;display:inline-block;">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <span class="footer-logo">Indus Impressions</span>
+        <p class="footer-tagline">Fashion that honours our vanishing wildlife and the communities shaped by the Indus River. Based in Islamabad, Pakistan.</p>
+      </div>
+      <div>
+        <p class="footer-col-head">Navigate</p>
+        <ul class="footer-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="exhibition.html">Exhibition</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-head">Collections</p>
+        <ul class="footer-list">
+          <li><a href="products.html">Bags</a></li>
+          <li><a href="products.html">Sarees</a></li>
+          <li><a href="exhibition.html">Online Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-head">The Cause</p>
+        <ul class="footer-list">
+          <li><a href="about.html">Indus Dolphins</a></li>
+          <li><a href="about.html">Climate &amp; Sindh</a></li>
+          <li><a href="about.html">Our Artisans</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2024 Indus Impressions, Islamabad. All rights reserved.</p>
+      <p class="footer-copy">Designed with purpose.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
